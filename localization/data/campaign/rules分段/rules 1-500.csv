@@ -1,4 +1,4 @@
-﻿id,trigger,conditions,script,text,options,notes
+id,trigger,conditions,script,text,options,notes
 # default entity interaction,,,,,,
 defaultOpenDialog,OpenInteractionDialog,,"ShowDefaultVisual 
 PrintDescription 3 
@@ -471,7 +471,7 @@ $HeOrShe}挺直了背，说到，""你们最好保持距离。我...我们是有
 OR 
 当通信建立之后，}$rank}$personLastName}用显然认识你的表情警惕地盯着你。 
 
-""是...是你。你竟然做出过那种事情，我不敢相信--""}$heOrShe}不舒服地清了清嗓子，""你到底想要做什么?""",,
+""是...是你。你竟然做出过那种事情，我不敢相信}——""}$heOrShe}不舒服地清了清嗓子，""你到底想要做什么?""",,
 greetingDefaultInfamousFriendly,OpenCommLink,"$faction.friendlyToPlayer 
 $player.atrocities > 1 
 RollProbability 0.3 score:2","$menuState = fleetConvMain 0 
@@ -577,7 +577,7 @@ $entity.relativeStrength >= 0",$entity.ignorePlayerCommRequests = true 1,"""以�
 
 说完这些之后，屏幕上辛达强权}$personRank}幸灾乐祸的脸很快被辛达纹章所取代，随后图像就消失。 
 OR 
-""我们光辉未来没有废物人渣的容身之地。""}$PersonRank}$personName}转脸对身边的人说道，""中尉，这一次务必要格杀勿论。"" 
+""在我们光辉未来里没有人渣废物的容身之地。""}$PersonRank}$personName}转脸对身边的人说道，""中尉，这一次务必要格杀勿论。"" 
 
 通信连接没了信号。 
 OR 
@@ -592,7 +592,7 @@ FireAll PopulateOptions","""身份确认，保持距离。干扰军务将被视�
 OR 
 这位辛达强权}$personRank}很不耐烦，""没有问题就继续上路，公民。"" 
 OR 
-""使用S-D协议通讯。如果你有关于ARC成员和ANTI分子的情报，提交给当地情报官员便有机会获得报酬。""",,
+""使用}S-D}协议通讯。如果你有关于}ARC}成员和}ANTI}分子的情报，提交给当地情报官员便有机会获得报酬。""",,
 # luddic church fleet greeting lines,,,,,,
 greetingLCFriendly,OpenCommLink,"$faction.id == luddic_church 
 $faction.friendlyToPlayer","$menuState = fleetConvMain 0 
@@ -751,7 +751,7 @@ greetingRogueMinerHostileWeakerDefiant,OpenCommLink,"$faction.id == pirates
 $entity.isHostile 
 $entity.relativeStrength < 0 
 $entity.weakerThanPlayerButHolding 
-$entity.rogueMiner == true",$entity.ignorePlayerCommRequests = true 1,"叛逃矿工}$personRank}通过视讯对你比了个粗鲁的手势，然后切断了通讯。 
+$entity.rogueMiner == true",$entity.ignorePlayerCommRequests = true 1,"暴动矿工}$personRank}通过视讯对你比了个粗鲁的手势，然后切断了通讯。 
 OR 
 $personName}带着不屈的表情唾骂到:"又来了一个帮穿着华丽制服的主子杀人越货的蠢货!""",cutCommLink:切断通讯链接,
 greetingRogueMinerHostileStronger,OpenCommLink,"$faction.id == pirates 
@@ -881,10 +881,10 @@ greetingDerelictFriendly,OpenCommLink,"$faction.id == derelict score:1000
 $faction.friendlyToPlayer","$menuState = fleetConvMain 0 
 FireAll PopulateOptions","""人之领}MINEX许可}已接受，防篡改系统已被设为待命状态，将允许目标接近进行检修。""",,
 greetingDerelictHostile,OpenCommLink,"$faction.id == derelict score:1000 
-$entity.isHostile",$entity.ignorePlayerCommRequests = true 1,"""警告:}这艘船是人之领开拓者的财产，任何方式的篡改和/或破坏或侵入信号传送，都将回以致命武力。破坏或损毁人之领开拓者的财产的财产，除了应接受人之领当地的殖民政体宪章裁决外，还将根据《MINEX创立法案》受到相应的惩处。且此种违规行为将被记录在案。""",cutCommLink:切断通讯链接,
+$entity.isHostile",$entity.ignorePlayerCommRequests = true 1,"""警告:}本艘舰船是人之领开拓者的财产，任何方式的篡改和/或破坏或侵入信号传送，都将回以致命武力。破坏或损毁人之领开拓者的财产的财产，除了应接受人之领当地的殖民政体宪章裁决外，还将根据《MINEX创立法案》受到相应的惩处。且此种违规行为将被记录在案。""",cutCommLink:切断通讯链接,
 greetingDerelictNeutral,OpenCommLink,"$faction.id == derelict score:1000 
 $faction.neutralToPlayer","$menuState = fleetConvMain 0 
-FireAll PopulateOptions","""人之领的公民，这艘自动无人船依照任务参数设定，已经在航行过程中识别并记录了你的船只或居住地。人之领开拓者的自主船只的程序被设定为会以致命武力回应任何方式的篡改，包括破坏或侵入信号传送。破坏或损毁人之领开拓者的财产的财产，除了应接受人之领当地的殖民政体宪章裁决外，还将根据《MINEX创立法案》受到相应的惩处。""",,
+FireAll PopulateOptions","""人之领公民，这艘自动无人舰船依照任务参数设定，已经在航行过程中识别并记录了你的船只或居住地。人之领开拓者的自主船只的程序被设定为会以致命武力回应任何方式的篡改，包括破坏或侵入信号传送。破坏或损毁人之领开拓者的财产的财产，除了应接受人之领当地的殖民政体宪章裁决外，还将根据《MINEX创立法案》受到相应的惩处。""",,
 ,,,,,,
 ,,,,,,
 # Trade panel flavor text,,,,,,
@@ -919,10 +919,10 @@ flavorTextMarketHegemony,TradePanelFlavorText,"$global.tradePanelMode == MARKET
 $faction.id == hegemony","AddText ""港区被纵横交错的巨型货船和遍布坑洼的战斗货船给停满了，而霸主的巡逻艇它们之间穿行着。卸货的船长被霸主的后勤官员干脆利落地接待，过审，然后被放行到一大群商人、军火商和投机者之中。"" marketFlavorTextColor 
 AddText ""在一处临时隔墙上投影着霸主的火凤凰标志，在人之领的闪星标志环绕之下滚动显示着当地海军招募中心的通讯ID和征兵口号。}""游历星域，光荣服役，复兴人之领。""}"" marketFlavorTextColor",,,
 flavorTextMarketLuddicChurch,TradePanelFlavorText,"$global.tradePanelMode == MARKET 
-$faction.id == luddic_church","AddText ""港区内挤满了各种大小的贸易飞船。衣着服饰低调的卢德商人们等待着着与卸货的船长们会面。小贩们向太空船员们贩卖街头食品和手工艺品，而僧侣们则在自己的托钵前安静地祈祷。偶尔会出现一些狂热教徒执意要叱责外来者公开展示他们的科技物件和生化植入物，但很快就会被身披手纺卢德绿袍背着CP卡宾枪的卢德骑士及时送走。毕竟教会也讲究务实，在商人区，这样的罪过可以被容忍。"" marketFlavorTextColor",,,
+$faction.id == luddic_church","AddText ""港区内挤满了各种大小的贸易飞船。衣着服饰低调的卢德商人们等待着着与卸货的船长们会面。小贩们向太空船员们贩卖街头食品和手工艺品，而僧侣们则在自己的托钵前安静地祈祷。偶尔会出现一些狂热教徒执意要叱责外来者公开展示他们的科技物件和生化植入物，但很快就会被背着CP卡宾枪且身披手纺卢德绿袍的卢德骑士送走。毕竟教会也讲究务实，在商人区，这样的罪过可以被容忍。"" marketFlavorTextColor",,,
 flavorTextMarketPirateUmbra,TradePanelFlavorText,"$global.tradePanelMode == MARKET 
 $faction.id == pirates 
-$market.id == umbra score:100","AddText ""一些军舰上喷满了}ANTI}分子的革命口号，与同样战痕累累的海盗船并排停靠在一起。卸货区充满了真空的金属味，混有些许维生系统的不堪负荷与人性的龌龊。货物都会被检查，偶尔也会被没收，这都由那个在护卫陪同下正俯视着卸货船员们的区域领导负责。"" marketFlavorTextColor",,,
+$market.id == umbra score:100","AddText ""一些军舰上喷满了}ANTI}分子的革命口号，与同样战痕累累的海盗船并排停靠在一起。卸货区充满了真空的金属味，混有些许维生系统的不堪负荷与人性的龌龊。货物都会被检查，偶尔也会被没收，负责这一切的区域领导在护卫陪同下俯视着卸货船员们。"" marketFlavorTextColor",,,
 flavorTextMarketCryosanctum,TradePanelFlavorText,"$global.tradePanelMode == MARKET 
 $market.ind:cryosanctum == true score:100 
 $stability > 3","AddText ""深穴般的停机坪让停靠的寥寥几艘星际飞船显得格外渺小。传感器探测到隐蔽休眠中的自动炮塔阵列之间的耳语般的电磁波交互，暗示着这里的部署了远超过仅需确保访问寒冰圣地的少数商人、雇佣兵和有钱的怪胎的行为良好所必需的火力。一位官员会见了卸货的船长们，把他们到了访客休息室，并他们提供了有关标准超低温冬眠套餐的服务目录。"" marketFlavorTextColor",,,
@@ -1276,7 +1276,7 @@ OR
 
 ""哎?}你好!}你不就是那个挺有性格的家伙嘛?""}$HeOrShe}用等着你回话的眼神看着你，""我之前雇你去办了什么事还是怎么遭的?"" 
 OR 
-通讯解析出了}$personName}看上去像是正忙着其他事物的脸。""哦，你稍微等一下...好的...嗯...嗯...已经造成损失了。"" 
+通讯解析出了}$personName}看上去像是正忙于其他事物的脸。""哦，你稍微等一下...好的...嗯...嗯...已经造成损失了。"" 
 
 ""你!""}这句话是对视讯外的人说的，""你待会儿再和我讲完这事，我现在必须接这个通话。"" 
 
@@ -1367,7 +1367,7 @@ SetShortcut cutCommLink ""ESCAPE""","经过短暂的等待，你的连接请求�
 
 ""为什么会有个和}$market}当局作对的人想要和我联系?"" 
 
-你考虑到，也许关闭应答器，在避免受到任何不必要的注意的情况下回来可能是一个更好的方法。",0:cutCommLink:切断通讯链接,
+你考虑到，或许关闭应答器，在避免受到任何不必要的注意的情况下回来可能是一个更好的方法。",0:cutCommLink:切断通讯链接,
 # MarketProcurementMission,,,,,,
 mpm_greetingNeedTOff,PickGreeting,"$mpm_isPlayerContact 
 $player.transponderOn 
@@ -1500,7 +1500,7 @@ OR
 
 $personName}看向你，装作一副惊讶的样子。""很抱歉耽误了您宝贵的时间，我才刚听说了所有关于}$playerName}的故事，有点不敢相信真的遇到了你。而您居然主动跟我联系?}真走运!"" 
 
-你开始感觉到一种讽刺的气氛，而这时}$heOrShe}继续说了下去:"...因为现在我可以告诉大家，我有终于机会叫你去吸你妈逼的真空去吧!"" 
+你开始感觉到一种讽刺的气氛，而这时}$heOrShe}继续说了下去:""...因为现在我可以告诉大家，我有终于机会叫你去吸你妈逼的真空去吧!"" 
 
 在}$personName}正在比一个粗鲁的手势时，链接被强行切断了。你的通讯员在清理屏幕时，一直面无表情地看着他们的控制台。",ome_convEnd2:继续,
 ome_greetingAdmin,PickGreeting,"$ome_hireable score:100 
@@ -1550,10 +1550,10 @@ SetTextHighlightColors hColor
 SetTextHighlights $player.creditsStr
 FireBest HireOptionSet",,,
 ome_askHireSelMerc,DialogOptionSelected,"$option == ome_askHire
-$isMercenary","AddText ""\""典型的合同期是}$mercContractDurStr}天，可以根据我们回港的情况留一些延长的余地。期间任何一方都可以提前终止合同等诸如此类的常规条款就不再细说。当合同到期时，如果双方都同意，我们可以讨论延长合同。}\n\n}我希望得到}$ome_hiringBonus credit}的签约佣金，以及}$ome_salary credit}的月薪。在首笔转账完成之后，我可以在一小时内做好登舰准备。\""""
+$isMercenary","AddText ""\""典型的合同期是}$mercContractDurStr}天，可以根据我们回港的情况留一些延长的余地。期间任何一方都可以提前终止合同等诸如此类的常规条款就不再细说。当合同到期时，如果双方都同意，我们可以讨论延长合同。} \n\n}我希望得到}$ome_hiringBonus credit}的签约佣金，以及}$ome_salary credit}的月薪。在首笔转账完成之后，我可以在一小时内做好登舰准备。\""""
 SetTextHighlightColors hColor hColor hColor
 SetTextHighlights $mercContractDurStr $ome_hiringBonus $ome_salary
-AddText ""你有}$player.creditsStr}星币。}\n\n}这个军官是一个高度职业化的佣兵，不计入普通军官的上限。""
+AddText ""你有}$player.creditsStr}星币。} \n\n}这个军官是一个高度职业化的佣兵，不计入普通军官的上限。""
 SetTextHighlightColors hColor
 SetTextHighlights $player.creditsStr
 FireBest HireOptionSet",,,
@@ -1776,7 +1776,7 @@ MakeOtherFleetAggressive cargoScan false
 unset $entity.pursuePlayer_smugglingScan
 unset $entity.cargoScanConv
 $entity.smugglingScanComplete = true 1
-$sourceMarket.smugglingScanTimeout = true 30","情况和你预计得差不多，你的几艘船报告说在作战能力上受到了轻微但令人不快的损失。幸运的是，检查人员似乎更热衷于制造 ""意外 ""损害，而不是去实际寻找违禁品，因此他们没有发现有问题货物。",cutCommLinkNoText:Continue,
+$sourceMarket.smugglingScanTimeout = true 30","情况和你预计得差不多，你的几艘船报告说在作战能力上受到了轻微但令人不快的损失。幸运的是，检查人员似乎更热衷于制造}""意外""}损害，而不是去实际寻找违禁品，因此他们没有发现有问题货物。",cutCommLinkNoText:Continue,
 cargoScanClean2,DialogOptionSelected,$option == cargoScan_cleanCont,"MakeOtherFleetPreventDisengage cargoScan false
 MakeOtherFleetAggressive cargoScan false
 unset $entity.pursuePlayer_smugglingScan
