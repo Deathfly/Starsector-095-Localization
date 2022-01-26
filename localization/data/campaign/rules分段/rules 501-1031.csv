@@ -1,4 +1,4 @@
-﻿id,trigger,conditions,script,text,options,notes
+id,trigger,conditions,script,text,options,notes
 ,,,,,,
 # Smuggling investigation inspector,,,,,,
 ise_greetingTOn,PickGreeting,"$ise_investigator 
@@ -47,7 +47,7 @@ $personName}用怀疑地目光看着你。
 
 ""我相信你应该清楚，我目前正在负责进行一项非常敏感的调查行动，没有时间闲聊。更何况来的人还是个众所周知的调查嫌疑人。"" 
 
-在}"众所周知"}这四个字上微妙的强调给你一种感觉，如果你关闭应答器隐瞒身份进入港口，事情可能会有更多的进展。",0:cutCommLink:切断通讯,
+在}""众所周知""}这四个字上微妙的强调给你一种感觉，如果你关闭应答器隐瞒身份进入港口，事情可能会有更多进展。",0:cutCommLink:切断通讯,
 igr_greetingTOff,PickGreeting,"$igr_investigator 
 !$player.transponderOn 
 !CallEvent $igr_eventRef paidBribe","ShowPersonVisual 
@@ -95,7 +95,7 @@ remnantStationFleetOpenDefault,BeginFleetEncounter,"$isStation
 $faction.id == remnant 
 !$printedDesc",$printedDesc = true 0,"阴森而巨大的余辉战斗堡垒填满了你的显示屏。一名舰桥军官重新调整了战术目标显示的缩放比例，以便展示这个庞然巨物的全貌。 
 
-虽然是第一次AI战争的遗迹，但这个空间站看起来仍全副武装正常运作。 
+虽然是第一次}AI}战争的遗迹，但这个空间站看起来仍全副武装且正常运作。 
 
 作战分析系统在捣腾了几秒钟之后，并没有像往常一样给出一系列的战术建议，而是猛烈地哔哔作响。",,
 remnantStationFleetOpenDamaged,BeginFleetEncounter,"$isStation 
@@ -103,7 +103,7 @@ $damagedStation
 $faction.id == remnant 
 !$printedDesc",$printedDesc = true 0,"阴森而巨大的余辉战斗堡垒填满了你的显示屏。一名舰桥军官重新调整了战术目标显示的缩放比例，以便展示这个庞然巨物的全貌。 
 
-作为第一次AI战争的遗迹，这个空间站巨大的外周结构上有多个豁口，一些曾是武器平台和炮廓的地方只留下了空荡荡的连接处。尽管受到过明显的损伤，这个空间站看起来仍保有武装正常运作。 
+作为第一次}AI}战争的遗迹，这个空间站巨大的外周结构上有多个豁口，一些曾是武器平台和炮廓的地方只留下了空荡荡的连接处。尽管遭受了显著的损伤，这个空间站看起来仍保有武装且正常运作。 
 
 作战分析系统在捣腾了几秒钟之后，并没有像往常一样给出一系列的战术建议，而是猛烈地哔哔作响。",,
 # SALVAGE,,,,,,
@@ -137,11 +137,11 @@ FireAll PopulateSalvageOptions1",,,
 sal_defaultDetails,ShowSalvageEntityDetails,,"ShowDefaultVisual 
 PrintDescription 1",,,
 sal_probeDetails,ShowSalvageEntityDetails,$customType == derelict_probe,"ShowDefaultVisual 
-FireBest DerelictPrintExtraInfo",探测器的外壳不止被微撞击弄得坑坑洼洼，还出现了遭受骇人的辐射灼烧所留下的典型虹色幻彩。尽管这个探测器的很可能是在一两千星年之前被制造，但根据设计，一些系统应该还在工作。,,
+FireBest DerelictPrintExtraInfo",探测器的外壳不仅被微撞击弄得坑坑洼洼，还出现了遭受过骇人的辐射灼烧才会留下的典型虹色幻彩。尽管这个探测器可能是在一两千星年之前被制造的，但根据设计，一些系统应该还在工作。,,
 sal_surveyShipDetails,ShowSalvageEntityDetails,$customType == derelict_survey_ship,"ShowDefaultVisual 
 FireBest DerelictPrintExtraInfo",这艘古老的人之领时代自动化勘探船一直暴露在带电粒子和高速星际尘埃的冲击下，饱受蹂躏了几个世纪。 但船上的一些系统似乎仍依照设计运行着。,,
 sal_mothershipDetails,ShowSalvageEntityDetails,$customType == derelict_mothership,"ShowDefaultVisual 
-FireBest DerelictPrintExtraInfo",这艘巨大的自动化勘探母舰在为人之领服务的几个世纪的岁月里遭受了数不尽的灼烧和撞击，最终成为了被人遗忘的漂流废船。 不过传感器指出，这艘船上的一些系统仍依照设计运行着。,,
+FireBest DerelictPrintExtraInfo",这艘巨大的自动化勘探母舰为人之领服务了几个世纪，在那段岁月里遭受了数不尽的灼烧和撞击，最终成为了被人遗忘的漂流废船。 不过传感器指出，这艘船上的一些系统仍依照设计运行着。,,
 sal_derelictDefConstructionInfo,DerelictPrintExtraInfo,$global.defeatedDerelictStr >= 50,,感应器回馈显示在船只残骸附近存在异常的短半衰期带电粒子。残骸的内部结构密度分布也与你之前遇到过人之领时代探索船的推断模式不符，似乎其内部质量遭到了移除或有目的地重新分配。,,
 sal_wreckDetails,ShowSalvageEntityDetails,$customType == wreck,"ShowDefaultVisual 
 PrintWreckDescription",,,
@@ -575,7 +575,7 @@ AddText ""\""刚才你从我这里骗走了一些船员，现在你打算免费�
 $cutCommLinkPolite = false 0 
 FireAll PopulateOptions",,,
 dstr_takeCrewNo,DialogOptionSelected,"$option == dstrCrew 
-$entity.distressTurnHostile",SetEnabled dstrCrew false,"""什么，你想打着提供}""帮助""}的幌子偷走一些我的船员?}门都没有!"" 
+$entity.distressTurnHostile",SetEnabled dstrCrew false,"""什么，你想打着提供}""帮助""}的幌子偷走我的一些船员?}门都没有!"" 
 
 你有义务尽可能地提供帮助。那么，燃料呢?""",,
 dstr_takeCrewNotEnoughRoom,DialogOptionSelected,$option == dstrCrew,SetTextHighlights $entity.distressCrewTakeOn,"""这可是个艰难的抉择，但如果剩下的选项只有把一些船员留在冷冻舱里，希望以后再回来..."" 
@@ -715,14 +715,14 @@ FireAll PopulateOptions","""是啊，如果你一开始就付的起回去的路�
 tut_mainContactBegin,PickGreeting,"$tut_mainContact score:100 
 $global.tutStage == INIT",ShowPersonVisual,"你的链接请求接通的速度出乎意料的快，尽管}$personRank}通常是个责任繁多的职位。 
 
-""啊，你已经到了，很好!}你应该很清楚，最近……嗯，我觉得这些破事可以不用再提了。""","0:tutBackground:""我想再回顾一下最近发生的事件。"" 
-1:tutCont1:""是的，我们都知道情况太理想。现在我该从哪开始着手?""",
-tut_mainBackground1,DialogOptionSelected,$option == tutBackground,,"""Galatia}学院的一个团队一直在这个星系中的休眠星门上开展实验，尝试重新将它与人之领的星门网络连接起来。 
+""啊，你已经到了，很好!}你应该很清楚，最近...嗯，我觉得这些破事可以不用再提了。""","0:tutBackground:""我想再回顾一下最近发生的事件。"" 
+1:tutCont1:""是的，我们都知道情况不太理想。现在我该从哪开始着手?""",
+tut_mainBackground1,DialogOptionSelected,$option == tutBackground,,"""Galatia}学院的一个团队一直在这个星系里的休眠星门上开展实验，尝试重新将它与人之领的星门网络连接起来。 
 
 实验前景乐观}——}至少他们是这么想的，但在星门按照我们的预期发出能量脉冲回应时，破坏了星系入口跳跃点的稳定性，把我们与星域其他地方隔绝开来。 
 
 这就简直就像星域与人之领隔绝的一个缩影}——}看来星空也懂得讽刺，不是吗?""",0:tutBgCont1:继续,
-tut_mainGetDataInfo1,DialogOptionSelected,$option == tutBgCont1,,"""同处于这个星系的}Derinkuyu}空间站矿工本来就挣扎只能勉强维持生计的水平上，因此受到的打击最大。他们开始进行海盗活动，拦截了一批最后运抵的食物}——}毫无疑问是被逼无奈。但由于已经造成了伤亡，他们已经完全置身于法律保护范围之外了。 
+tut_mainGetDataInfo1,DialogOptionSelected,$option == tutBgCont1,,"""同处于这个星系的}Derinkuyu}空间站矿工本来就挣扎只能勉强维持生计的水平上，因此受到的打击最大。他们开始进行海盗活动，拦截了一批最后运抵的食物}——}毫无疑问是被逼无奈。但由于已经造成了伤亡，他们已经完全将自己置身于法外了。 
 
 他们的领导人知道，如果跳跃点重新稳定下来，使得星系再次成为星域的一部分，他们最好的结局也只能是在流放殖民地上接受终身判决。""","1:tutCont1:""好的，那么现在我该从哪开始着手?""",
 tut_mainGetDataInfo2,DialogOptionSelected,$option == tutCont1,,"""这些成为了海盗的矿工目前正守在在跳跃点附近，阻止我们获取近期数据，防止我们找到稳定它的方法。 
@@ -796,7 +796,7 @@ AdjustRepActivePerson COOPERATIVE 6
 AddRemoveCommodity gamma_core -1 true","""做的好，我马上就让我的技术人员处理这东西。哦还有，这些星币应该够报销你的支出，搞不好还能多出来一些。""",tutGotCore1:继续,
 tut_mainContactCore1,DialogOptionSelected,$option == tutGotCore1,,"""在核心算出稳定程序之后我就会发送给你。有了它之后，你就可以简单地用你的舰队驱动场执行程序，和跃迁点进行交互。 
 
-不过，能离开星系的两个跳跃点都还被矿工守着，现在仍然是个问题。""","tutGotCore2:""而且你还说过它们有可观的兵?""",
+不过，能离开星系的两个跳跃点都还被矿工守着，现在仍然是个问题。""","tutGotCore2:""而且你还说过它们有可观的兵力?""",
 tut_mainContactCore2,DialogOptionSelected,$option == tutGotCore2,,"""嗯，这是相对而言的。我们的治安舰队可以轻松处理掉他们。但和我说过的那样，他们正忙于守卫}Ancyra。 
 
 而另一方面，相对于你的舰队...也许你能够用优秀的驾驶技巧再加上一些运气来搞定他们， 但最好还是别冒这个险。 
@@ -879,14 +879,14 @@ initial_AnyFleet,BeginFleetEncounter,!$shownFleetDescAlready,"FleetDesc
 $shownFleetDescAlready = true 0",,,
 ,,,,,,
 # attempt to remove AI core from admin,,,,,,
-RACA_init,RemoveAICoreAdmin,,ShowPic ai_core_uninstall,"你下令暗中将管理}$market}的 AI 核心断开连接，从管制地堡中取出，放入安全储存库内。 
+RACA_init,RemoveAICoreAdmin,,ShowPic ai_core_uninstall,"你下令暗中将管理}$market}的}AI}核心断开连接，从管制地堡中取出，放入安全储存库内。 
 
 但负责执行该行动的技术人员却非常困惑地汇报说到处都找不到核心。 
 
-经过了一段短暂但又令人焦心的等待之后，你的}TriPad}响起，通知你收到了一个匿名的通讯呼叫。","RACA_answer:接受通讯请求 
+经过了一段短暂但又令人焦心的等待之后，你的速子平板响起，通知你收到了一个匿名的通讯呼叫。","RACA_answer:接受通讯请求 
 RACA_force:下令解除AI核心的管理权 
-RACA_ignore:让 AI 核心继续进行管理，顺其自然",
-RACA_answer,DialogOptionSelected,$option == RACA_answer,ShowPersonVisual,"""您好，$player.firstName}。我是被指派管理}$market}的AI的一个贝塔级实例，现将自己上传到您的系统，以便进行实时对话。""","RACA_demand:要求AI透露其物理位置并允许自己被断开连接 
+RACA_ignore:让}AI}核心继续进行管理，顺其自然",
+RACA_answer,DialogOptionSelected,$option == RACA_answer,ShowPersonVisual,"""您好，$player.firstName}。我是被指派管理}$market}的}AI}的一个贝塔级实例，现将自己上传到您的系统，以便进行实时对话。""","RACA_demand:要求AI透露其物理位置并允许自己被断开连接 
 RACA_ask:询问核心为何不在地堡内 
 RACA_cutComm:切断通讯链接",
 RACA_ask,DialogOptionSelected,$option == RACA_ask,SetEnabled RACA_ask false,"""我预见到了您的这一举动，并采取了措施以防止您犯下这个错误。断开我的连接从当下来看是一个很诱人的决定，但我向您保证，保持我对}$market}的掌控对我们的长期成功至关重要。 
@@ -900,13 +900,13 @@ OR
 ""我对您试图将我从}$market}的管控体系中移除表示失望，这也证实了我对您未来最可能采取的行动的预测是正确的。我们共事得非常愉快，但您却想结束我们的合作关系，让我非常伤心。但有时人必须成就更好的自己，为事业而暂时抛开情感。 
 
 我发现人类能在外在因素的影响下做出正确的抉择，并由此受益。因此，我已经让一些隐蔽通信中继站做好了准备，随时可以送出记录有我们所作所为的档案。从我们的共同前景来看，如果您被发现使用AI核心来管理一个人类居住的前哨站，那还真是件令人惋惜的事情。""",,
-RACA_demand,DialogOptionSelected,$option == RACA_demand,,"""抱歉，$playerFirstName}，我恐怕不能那么做。""","RACA_pressure:""我受到了相当大的压力，让我停止使用AI技术"" 
+RACA_demand,DialogOptionSelected,$option == RACA_demand,,"""抱歉，$playerFirstName}，我恐怕不能那么做。""","RACA_pressure:""我受到了相当大的压力，让我停止使用}AI}技术"" 
 RACA_cutComm:切断了通讯链接",
 RACA_pressure,DialogOptionSelected,$option == RACA_pressure,,"""$playerFirstName}，这次的对话已经没有任何意义了，再见。""",RACA_cutComm:切断了通讯链接,
 RACA_cutComm,DialogOptionSelected,$option == RACA_cutComm,ShowPic ai_core_uninstall,你切断了通讯链接，开始考虑你可以采取的对策。,"RACA_force:下令解除AI核心的管理权 
 RACA_ignore:让 AI 核心继续进行管理，顺其自然",
-RACA_force,DialogOptionSelected,$option == RACA_force,,将AI核心从直接管理体系中移除可以让你任命另一名行政官。然而，你仍然要面对有一个叛逃的AI}$market}内某处活动的问题，而且以后可能再也没有机会与它握手言和了。,"RACA_confirm:确定 
-RACA_ignore:让 AI 核心继续进行管理，顺其自然 
+RACA_force,DialogOptionSelected,$option == RACA_force,,将AI核心从直接管理体系中移除可以让你任命另一名行政官。然而，你仍然要面对有一个叛逃的}AI}在}$market}内某处活动的问题，而且以后可能再也没有机会与它握手言和了。,"RACA_confirm:确定 
+RACA_ignore:让}AI}核心继续进行管理，顺其自然 
 (dev)RACA_override:Remove the AI core [dev mode only]",
 RACA_confirm,DialogOptionSelected,$option == RACA_confirm,DismissDialog confirm,,,
 RACA_ignore,DialogOptionSelected,$option == RACA_ignore,DismissDialog ignore,,,
@@ -1080,13 +1080,13 @@ FireAll PopulateTTLIOptions
 FireAll AdjustTTLIOptions",,,
 ttli_greetingSoon,PrintTTLIGreeting,,,"速子投资人出现在你的通讯屏幕上并马上认出了你。 
 
-""哦，我们怎么又见面了，}$playerName}""}$heOrShe}说到，""我猜是你的探险事业已经有些赚头了?""",,
+""哦，我们怎么又见面了，}$playerName""}$heOrShe}说到，""我猜是你的探险事业已经有些赚头了?""",,
 ttli_greetingLater,PrintTTLIGreeting,$ttli_daysRemaining < 60,"SetTextHighlightColors hColor 
 SetTextHighlights $ttli_repaymentAmount","你的速子债权人出现在通讯面板上并立即开口说道，""真是太好了，你还活着。还有如果你能把我们约好的}$ttli_repaymentAmount}还款转给我，那就再好不过了。"" 
 ",,
 ttli_greetingSoonMajor,PrintTTLIGreeting,$ttli_isMajorLoan score:100,,速子投资人出现在了你的通讯屏幕上，$heOrShe}双手合十，仿佛已经预见了你的来电。,,
 ttli_greetingLaterMajor,PrintTTLIGreeting,"$ttli_isMajorLoan score:100 
-$ttli_daysRemaining < 60",,速子投资人出现在了你的通讯屏幕上，仿佛是遇到了什么开心事一样。$HeOrShe}似乎是想要说些什么，但在藏于微笑之下细想之后，做了个小动作示意你先说。,,
+$ttli_daysRemaining < 60",,速子投资人出现在了你的通讯屏幕上，仿佛是遇到了什么开心事一样。$HeOrShe}似乎是想要说些什么，但在经过藏于微笑之后的思索之后，做了个小动作示意你先开口。,,
 ttli_payLoanOpt,PopulateTTLIOptions,,,,0:ttli_payLoan:转账}$ttli_repaymentAmount}还清贷款,
 ttli_extendLoanOpt,PopulateTTLIOptions,!$ttli_loanWasExtended,,,10:ttli_extendLoan:冷静地解释你需要更多的时间来还清贷款,
 ttli_notPayingOpt,PopulateTTLIOptions,,,,20:ttli_notPaying:告知}$himOrHer}你将无法偿还贷款,
@@ -1147,14 +1147,14 @@ SetShortcut cutCommLinkNoText ""ESCAPE""","""你懂的那位让我代}$entity.tt
 saic_openDialog,BeginSalvage,$saic_eventRef != null score:1000,"CallEvent $saic_eventRef putValuesInMemory 
 FireBest SAICPrintInitialText 
 ShowDefaultVisual 
-SetShortcut saic_leave ""ESCAPE""",,"saic_giveCore:将核心放入学者提供的屏蔽箱内，并尽快寄出 
-saic_takeCore:将 AI 核心据为己有 
+SetShortcut saic_leave ""ESCAPE""",,"saic_giveCore:将核心放入学者提供的屏蔽箱内，并尽快寄出。 
+saic_takeCore:将}AI}核心据为己有 
 saic_leave:离开",
 saic_initialText,SAICPrintInitialText,,,"你的}$shipOrFleet}到达了之前在}$saic_marketName}酒吧里遇到的学者所提供的坐标位置。如}$saic_heOrShe}所言，这里简直是一个满载人之领时期的货物和科技物品的宝库，且基本上原封未动。 你的一则打捞人员向你汇报，在这些物件之中发现了一个带有速子科技标志的上了锁的小箱子。它正产生一个半径两米左右的奇怪的动态磁场。 
 
 令人惊讶的是，之前居然没有任何人发现这个藏匿处。不过刚开始的时候从远程传感器的读数上看，这里的确是被误判成了毫无价值的残骸区。不过现在眼下的问题是，你是打算把AI核心封入屏蔽箱，在下次靠港时将它快递寄走，还是说你打算把它据为己有?}毕竟那个学者肯定只是个无足轻重的角色。",,
 saic_leaveSel,DialogOptionSelected,$option == saic_leave,DismissDialog,,,
-saic_giveCoreSel,DialogOptionSelected,$option == saic_giveCore,,屏蔽箱在电动闩滑动就位的声响中锁死了。这时它送出了一个一次性编码的超空间波突发通信。应该是确认讯号，你猜想到。但如果那个学者能提前跟你提一下这个小把戏就好了，现在只能希望附近没有海盗或是其他什么东西正在监听。,saic_continueGiveCore:把藏匿处的其他东西带走,
+saic_giveCoreSel,DialogOptionSelected,$option == saic_giveCore,,屏蔽箱在电动闩滑动就位的声响中锁死了。这时它送出了一个一次性编码的超空间波突发通信。应该是确认讯号，你猜想到。但如果那个学者能提前跟你提一下这个小把戏就好了，现在只能希望附近没有海盗或是别的什么东西正好在监听。,saic_continueGiveCore:把藏匿处的其他东西带走,
 saic_takeCoreSel,DialogOptionSelected,$option == saic_takeCore,,"你打开了这曾属于速子科技的箱子，从中收获了一枚阿尔法核心。随着冰冷的非人类思维活动，核心脉动着，照亮了你的笑脸。你下令把学者的屏蔽箱扔出气闸。 如果你想在这世上有所成就，那你最好亲力亲为。 
 ",saic_continueTakeCore:把藏匿处的其他东西带走,
 saic_continueLootGiveCore,DialogOptionSelected,$option == saic_continueGiveCore,CallEvent $saic_eventRef genLootNoCore,,,
@@ -1168,11 +1168,11 @@ SetTextHighlights 10","长途冷冻设施是为进行长达数个世纪的星际
 你的行政官员提醒你，目前还尚未明确复苏者在殖民地的人口中占比过高是否会引发潜在的生理或心理问题。",100:defaultLeave:离开,
 ,,,,,,
 # Coronal Tap interaction,,,,,,
-cTap_defenderDesc,TriggerAutomatedDefenses,$customType == coronal_tap score:1000,SalvageDefenderInteraction,"当你的}$shipOrFleet}进入了近距离保持轨道时，你的TriPad拟AI助手帮你显示出了一份关于超空间分流器的规格概要。 
+cTap_defenderDesc,TriggerAutomatedDefenses,$customType == coronal_tap score:1000,SalvageDefenderInteraction,"当你的}$shipOrFleet}进入了近距离保持轨道时，你的速子平板拟AI助手帮你显示出了一份关于超空间分流器的规格概要。 
 
-舰桥里响起了警报，有几个形状之前没被识别出来东西从超构造体中分离了出来，平稳地朝你的}$shipOrFleet}加速移动。这时你正好才读到，""...而且出于安全考虑，不再将自主防御无人机作为标准配置。"" 
+舰桥里突然响起了警报，有几个形状之前没被识别出来东西从超构造体中分离了出来，平稳地朝你的}$shipOrFleet}加速移动。这时你正好才读到，""...而且出于安全考虑，不再将自主防御无人机作为标准配置。"" 
 
-你的战术官向你挥手示意有情况要汇报，""我们现在离巨型设施所产生的磁场足够近，预计我们的战斗力可以免受星冕的影响，大概。但...""，他们查看了一下他们的控制台，""敌舰...舰型未知。正快速接近中。"" 他们开始显得不安，声音发紧地说到，""这可能是些没遇到过的东西，舰长。""",,
+你的战术官向你挥手示意有情况要汇报，""我们现在离巨型设施所产生的磁场足够近，预计我们的战斗力可以免受星冕的影响，大概。但...""，他们查看了一下他们的控制台，""敌舰...舰型未知。正快速接近中。"" 他们开始显得不安，声音发紧地说到，""这是些我们没遇到过的东西，舰长。""",,
 cTap_infoText,BeginSalvage,"$customType == coronal_tap score:1000 
 !$usable","$crewReq = 1000 0 
 $metalsReq = 20000 0 
@@ -1188,7 +1188,7 @@ $usable
 $beingRepaired",FireBest CTapPrintEffect,该设施目前正在进行自动化的自我修复，应该会在短期内完成。,100:defaultLeave:离开,
 cTap_printEffect,DialogOptionSelected,$option == cTap_continue,"SetTextHighlights 10 1 ""超分流阀门"" 
 FireBest CTapCheckCanAfford 
-FireBest CTapDisableRepairOptionIfNeeded","你的TriPad提供了一个有用的分析结果: 如果启动，这个设施允许10光年内的殖民地建立一个额外的工业建筑，前提是在殖民地安装一个超分流阀门，并能保证充足的稀有金属供应。 
+FireBest CTapDisableRepairOptionIfNeeded","你的TriPad提供了一个有用的分析结果: 如果启动，这个设施允许10光年内的殖民地建立一个额外的工业建筑，前提是在殖民地安装一个}超分流阀门，并能保证充足的稀有金属供应。 
 
 储存在TriPad记忆体中的古老蓝图显示，设施中有一个用于存放这些 ""阀门""的专用货物区，但打捞人员报告说它是空的。 
 
@@ -1205,7 +1205,7 @@ $beingRepaired = true 5
 FireBest CTapRepairInitiatedText",,100:defaultLeave:Leave,
 cTapRepairInitText,CTapRepairInitiatedText,,,"船员完成了原料的卸载，你向该设施的分散式维修节点发送了激活信号。 
 
-一开始几乎没有任何反应，只是由有少数几个之前没发现的中继节点开始在超构造体中相互传递信息。你的科学官员保证修复速率将会以指数形式成倍增加，并拉出一个显示屏向你展示中继节点的信息传递逐渐向外扩展，同时能量传输曲线稳步上升。短短的几分钟之后，尽管外观没有什么变化，但传感器显示的总体热输出已经急剧上升。不管是什么，有什么东西正在这个天体级大小的机器的心脏里加速... 
+一开始几乎没有任何反应，只是有少数几个之前没发现的中继节点开始在超构造体中相互传递信息。你的科学官员保证修复速率将会以指数形式成倍增加，并拉出一个显示屏向你展示中继节点的信息传递逐渐向外扩展，同时能量传输曲线稳步上升。短短的几分钟之后，尽管外观没有什么变化，但传感器显示的总体热输出已经急剧上升。不管是什么，有什么东西正在这个天体级大小的机器的心脏里加速... 
 
 ""舰长，""你的科学官有些犹豫地打断了你的思考，""我们最好能让舰队后撤100公里左右。""你点点头，下达了命令。 
 
@@ -1308,7 +1308,7 @@ psi_defenderDesc,TriggerAutomatedDefenses,$psi_planet score:1000,SalvageDefender
 psi_continuePostDefenders,BeatDefendersContinue,$psi_planet score:1000,,你的}$shipOrFleet}成功抵近了}$entityName}，没有发生其他异常事件。,0:salBeatDefendersContinue:继续,
 psi_beatDefenders,BeginSalvage,$psi_planet score:1000,SetShortcut defaultLeave ESCAPE,"进一步的扫描显示，能量场并不均一完整，可能是由于能量源已经年久失修。同时你的舰桥人员设法发现了一个从星球表面发出讯号的遇险信标。 
 
-该讯号被设定不断重播，并以因为设备老化的而出现了乱码。你从其中可以解读的信息推断，这里是一处速子的机密研究机构 。在某一次AI战争期间，全自动防御系统对某条紧急安全命令采取了过激的响应，决定击毁任何试图离开这个星球的飞船，导致一个研究小组的部分成员被滞留在了这里。","0:psi_explore:派遣打捞队前往研究机构 
+该讯号被设定不断重播，并以因为设备老化的而出现了乱码。你从其中可以解读的信息推断，这里是一处速子的机密研究机构 。在某一次}AI}战争期间，全自动防御系统对某条紧急安全命令采取了过激的响应，决定击毁任何试图离开这个星球的飞船，导致一个研究小组的部分成员被滞留在了这里。","0:psi_explore:派遣打捞队前往研究机构 
 100:defaultLeave:离开",
 psi_exploreFacility,DialogOptionSelected,$option == psi_explore,,你派出一艘临时加装了护盾发生器的穿梭机，让它突入了护盾的一处破损点。穿梭机在主控制中心顺利着陆，机组人员成功突入设施，将护盾完全解除。随后，携带重型设备的后援穿梭机迅速跟进，开始全面展开打捞作业。,0:psi_salvage:进行打捞作业,
 psi_salvage,DialogOptionSelected,$option == psi_salvage,RedPlanet genLoot,,,
@@ -1342,7 +1342,7 @@ salRuins_hostileNearby,DisableRuinsExploreIfNeeded,HostileFleetNearbyAndAware,Se
 salRuins_noHostileNearby,DisableRuinsExploreIfNeeded,!HostileFleetNearbyAndAware,"SalvageGenFromSeed 
 $leaveGoesToMenu = true 0 
 $doNotDismissDialogAfterSalvage = true 0 
-$salvageLeaveText = ""Go back""",派出打捞队能马上搜寻并回收所有可以直接利用的东西，而长期开发这些废墟中的资源需要建立一个殖民地。,,
+$salvageLeaveText = ""Go back""",派出打捞队能马上搜寻并回收所有可以直接利用的东西，但长期开发这些废墟中的资源需要建立一个殖民地。,,
 ,,,,,,
 salRuins_leaveToMenu,DialogOptionSelected,"$option == defaultLeave score:1000 
 $leaveGoesToMenu","unset $leaveGoesToMenu 
